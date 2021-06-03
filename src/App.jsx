@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { DndProvider, useDrag, useDrop } from "react-dnd";
 import HTML5Backend from "react-dnd-html5-backend";
 import KanbanColumn from './components/KanbanColumn';
@@ -9,10 +9,13 @@ import cx from "classnames";
 
 function App() {
 
-  const btn = cx(styles.addBtn, styles.solid);
+  
 
   const [tasks, setTasksStatus] = useState(tasksList);
 
+  const changeTaskStatus = useCallback(
+
+  );
 
   return (
     <>
@@ -22,18 +25,14 @@ function App() {
         <div className={styles.dragContainer}>
           <ul className={styles.dragList}>
             {channels.map(({ label, style }) => {
-              const column = cx(styles.dragColumn, styles[style]);
+              
               return (
                 <KanbanColumn
                   key={label}
                   status={label}
-                >
-                  <li
-                    className={column}
-                  >
-                    <span className={styles.header}>
-                      <h1>{labelsMap[label]}</h1>
-                    </span>
+                  changeTaskStatus={changeTaskStatus}
+                  style={style}
+                >  
                     <KanbanItem>
                       <div className={styles.customScroll}>
                         <ul
@@ -51,21 +50,7 @@ function App() {
                           )}
                         </ul>
                       </div>
-                    </KanbanItem>
-                    {/* Add Button Group */}
-                    <div className={styles.addBtnGroup}>
-                      <div className={styles.addBtn}>
-                        <span className={styles.plusSign}>+</span>
-                        <span>Add Item</span>
-                      </div>
-                      <div className={btn}>
-                        <span>Save Item</span>
-                      </div>
-                    </div>
-                    <div className={styles.addContainer}>
-                      <div className={styles.addItem}></div>
-                    </div>
-                  </li>
+                    </KanbanItem>                    
                 </KanbanColumn>
               )
             })}

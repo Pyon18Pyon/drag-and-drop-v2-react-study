@@ -1,4 +1,11 @@
-/* .dragColumn {
+:root {
+  --column-1: #a2622d;
+  --column-2: #1b6161;
+  --column-3: #248224;
+  --column-4: #a22d22;
+}
+
+.dragColumn {
   flex: 1;
   margin: 0 10px;
   position: relative;
@@ -33,30 +40,27 @@
 .onHoldColumn .solid:hover,
 .onHoldColumn .over {
   background-color: var(--column-4);
-} */
+} 
 
-
-
-/* .header {
+.header {
   display: flex;
   justify-content: center;
   border-radius: 10px;
   margin: 10px;
-} */
+}
 
 /* Drag and Drop */
-/* .over {
+.over {
   padding: 50px 10px;
-} */
-
+}
 
 /* Add Button Group */
-/* .addBtnGroup {
+.addBtnGroup {
   display: flex;
   justify-content: space-between;
-} */
+}
 
-/* .addBtn {
+.addBtn {
   margin: 10px;
   padding: 5px 10px;
   display: flex;
@@ -117,4 +121,4 @@
 
 .addItem:focus {
   outline: none;
-} */
+}
