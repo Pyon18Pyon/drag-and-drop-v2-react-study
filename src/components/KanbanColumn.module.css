@@ -1,0 +1,120 @@
+/* .dragColumn {
+  flex: 1;
+  margin: 0 10px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  overflow-x: hidden;
+}
+
+.backlogColumn .header,
+.backlogColumn .solid,
+.backlogColumn .solid:hover,
+.backlogColumn .over {
+  background-color: var(--column-1);
+}
+
+.progressColumn .header,
+.progressColumn .solid,
+.progressColumn .solid:hover,
+.progressColumn .over {
+  background-color: var(--column-2);
+}
+
+.completeColumn .header,
+.completeColumn .solid,
+.completeColumn .solid:hover,
+.completeColumn .over {
+  background-color: var(--column-3);
+}
+
+.onHoldColumn .header,
+.onHoldColumn .solid,
+.onHoldColumn .solid:hover,
+.onHoldColumn .over {
+  background-color: var(--column-4);
+} */
+
+
+
+/* .header {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 10px;
+} */
+
+/* Drag and Drop */
+/* .over {
+  padding: 50px 10px;
+} */
+
+
+/* Add Button Group */
+/* .addBtnGroup {
+  display: flex;
+  justify-content: space-between;
+} */
+
+/* .addBtn {
+  margin: 10px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: fit-content;
+  border-radius: 5px;
+  transition: all 0.3s ease-in;
+  user-select: none;
+}
+
+.addBtn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+}
+
+.addBtn:active {
+  transform: scale(0.97);
+}
+
+.solid {
+  display: none;
+}
+
+.solid:hover {
+  transition: unset;
+  filter: brightness(95%);
+  color: white;
+}
+
+.plusSign {
+  font-size: 1.5rem;
+  margin-right: 5px;
+  position: relative;
+  top: -3px;
+}
+
+.addContainer {
+  margin: 10px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  min-height: 100px;
+  display: none;
+}
+
+.addItem {
+  width: 100%;
+  min-height: 100px;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  margin: 5px auto;
+  resize: none;
+  color: black;
+  padding: 10px;
+}
+
+.addItem:focus {
+  outline: none;
+} */
