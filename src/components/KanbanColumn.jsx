@@ -1,16 +1,27 @@
 import React, { useRef } from "react";
+import { useDrop } from "react-dnd";
 import styles from "./KanbanColumn.module.css";
 import { labelsMap } from '../kanbanLists';
 import cx from "classnames";
 
-function Kanban({ children, changeTaskStatus, style, status }) {
+function KanbanColumn({ children, changeTaskStatus, style, status }) {
 
   const btn = cx(styles.addBtn, styles.solid);
   const column = cx(styles.dragColumn, styles[style]);
 
+  const ref = useRef(null);
+  const [, drop] = useDrop({
+    accept: 'card',
+    drop(item) {
+      changeTaskStatus(item.id, status);
+    }
+  });
+  drop(ref);
+
   return (
     <li
       className={column}
+      ref={ref}
     >
       <span className={styles.header}>
         <h1>{labelsMap[status]}</h1>
@@ -33,4 +44,4 @@ function Kanban({ children, changeTaskStatus, style, status }) {
   );
 }
 
-export default Kanban;
+export default KanbanColumn;

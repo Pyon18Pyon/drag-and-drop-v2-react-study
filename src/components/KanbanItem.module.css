@@ -1,29 +1,5 @@
-/* .dragItemList {
-  min-height: 50px;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.dragItem {
-  margin: 10px;
-  padding: 10px;
-  height: fit-content;
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 10px;
-  line-height: 1.5rem;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-
-.dragItem:focus {
-  outline: none;
-  background-color: white;
-  color: black;
-} */
-
 /* Custom Scrollbar */
-/* .customScroll {
+.customScroll {
   overflow-y: auto;
   max-height: 60vh;
 }
@@ -43,4 +19,4 @@
   border-radius: 10px;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: rgba(0, 0, 0, 0.8);
-} */
+}

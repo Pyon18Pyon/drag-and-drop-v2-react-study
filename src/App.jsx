@@ -1,11 +1,10 @@
 import React, { useState, useCallback } from 'react';
-import { DndProvider, useDrag, useDrop } from "react-dnd";
+import { DndProvider } from "react-dnd";
 import HTML5Backend from "react-dnd-html5-backend";
 import KanbanColumn from './components/KanbanColumn';
 import KanbanItem from './components/KanbanItem';
-import { tasksList, channels, labelsMap } from './kanbanLists';
+import { tasksList, channels } from './kanbanLists';
 import styles from "./App.module.css";
-import cx from "classnames";
 
 function App() {
 
@@ -33,8 +32,7 @@ function App() {
                   changeTaskStatus={changeTaskStatus}
                   style={style}
                 >  
-                    <KanbanItem>
-                      <div className={styles.customScroll}>
+                    <KanbanItem> 
                         <ul
                           className={styles.dragItemList}
                         >
@@ -49,7 +47,6 @@ function App() {
                             </li>
                           )}
                         </ul>
-                      </div>
                     </KanbanItem>                    
                 </KanbanColumn>
               )
