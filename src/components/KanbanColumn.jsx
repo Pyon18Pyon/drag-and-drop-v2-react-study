@@ -18,6 +18,7 @@ function KanbanColumn({ children, changeTaskStatus, style, status }) {
   });
   drop(ref);
 
+
   return (
     <li
       className={column}

@@ -37,14 +37,6 @@ body {
   padding: 0;
 }
 
-
-.dragItemList {
-  min-height: 50px;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
 .dragItem {
   margin: 10px;
   padding: 10px;
