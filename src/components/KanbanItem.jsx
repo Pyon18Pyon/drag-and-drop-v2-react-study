@@ -1,11 +1,10 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useDrag } from "react-dnd";
 import styles from './KanbanItem.module.css';
 
 
 function KanbanItem({ children, id }) {
 
-  const ref = useRef(null);
   const [{ isDragging }, drag] = useDrag({
     type: 'card',
     item: { id },
@@ -13,14 +12,13 @@ function KanbanItem({ children, id }) {
       isDragging: monitor.isDragging()
     })
   });
-  const opacity = isDragging ? 0 : 1;
-  drag(ref);
+  const opacity = isDragging ? 0.5 : 1;
 
   return (
     <>
       <div
         className={styles.customScroll}
-        ref={ref}
+        ref={drag}
         style={{ opacity }}
       >
         <ul

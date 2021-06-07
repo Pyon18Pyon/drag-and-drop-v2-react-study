@@ -9,20 +9,17 @@ function KanbanColumn({ children, changeTaskStatus, style, status }) {
   const btn = cx(styles.addBtn, styles.solid);
   const column = cx(styles.dragColumn, styles[style]);
 
-  const ref = useRef(null);
   const [, drop] = useDrop({
     accept: 'card',
-    drop(item) {
-      changeTaskStatus(item.id, status);
-    }
+    drop: (item) => 
+      changeTaskStatus(item.id, status)
   });
-  drop(ref);
 
 
   return (
     <li
       className={column}
-      ref={ref}
+      ref={drop}
     >
       <span className={styles.header}>
         <h1>{labelsMap[status]}</h1>
