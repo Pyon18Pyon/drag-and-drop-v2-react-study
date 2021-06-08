@@ -1,20 +1,27 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { useDrop } from "react-dnd";
 import styles from "./KanbanColumn.module.css";
+import EditableElement from './EditableElement';
 import { labelsMap } from '../kanbanLists';
 import cx from "classnames";
 
 function KanbanColumn({ children, changeTaskStatus, style, status }) {
 
   const btn = cx(styles.addBtn, styles.solid);
+
   const column = cx(styles.dragColumn, styles[style]);
+
+  const [showForm, setShowForm] = useState(false);
 
   const [, drop] = useDrop({
     accept: 'card',
-    drop: (item) => 
+    drop: (item) =>
       changeTaskStatus(item.id, status)
   });
 
+  const showInputBox = () => {
+    setShowForm(true);
+  };
 
   return (
     <li
@@ -26,18 +33,27 @@ function KanbanColumn({ children, changeTaskStatus, style, status }) {
       </span>
       {children}
       {/* Add Button Group */}
-      <div className={styles.addBtnGroup}>
-        <div className={styles.addBtn}>
-          <span className={styles.plusSign}>+</span>
-          <span>Add Item</span>
+      {!showForm ? (
+        <div className={styles.addBtnWrapper}>
+          <div className={styles.addBtn} onClick={showInputBox}>
+            <span className={styles.plusSign}>+</span>
+            <span>Add Item</span>
+          </div>
         </div>
-        <div className={btn}>
-          <span>Save Item</span>
+      ) : (
+
+        <div >
+          <div className={btn}>
+            <span>Save Item</span>
+          </div>
+
+          <div className={styles.addContainer}>
+            <EditableElement>
+              <div className={styles.addItem}></div>
+            </EditableElement>
+          </div>
         </div>
-      </div>
-      <div className={styles.addContainer}>
-        <div className={styles.addItem}></div>
-      </div>
+      )}
     </li>
   );
 }

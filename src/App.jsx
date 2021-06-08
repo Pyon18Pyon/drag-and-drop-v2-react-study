@@ -2,14 +2,17 @@ import React, { useState, useCallback } from 'react';
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import update from 'immutability-helper';
+// import ContentEditable from 'react-contenteditable'
 import KanbanColumn from './components/KanbanColumn';
 import KanbanItem from './components/KanbanItem';
+import EditableElement from './components/EditableElement';
 import { tasksList, channels } from './kanbanLists';
 import styles from "./App.module.css";
 
 function App() {
 
-  const [tasks, setTasksStatus] = useState(tasksList);
+  const [tasks, setTasksStatus] = useState(tasksList); 
+  const [isClicked, setIsClicked] = useState(false);
 
   const changeTaskStatus = useCallback(
     (id, status) => {
@@ -23,6 +26,8 @@ function App() {
     },
     [tasks]
   );
+
+
 
   return (
     <>
@@ -47,11 +52,13 @@ function App() {
                       key={item._id}
                       id={item._id}
                     >
-                      <li
-                        className={styles.dragItem} 
-                      >
-                        {item.title}
-                      </li>
+                      <EditableElement>
+                        <li
+                          className={styles.dragItem}
+                        >
+                          {item.title}
+                        </li>
+                      </EditableElement>
                     </KanbanItem>
                   )}
                 </KanbanColumn>
