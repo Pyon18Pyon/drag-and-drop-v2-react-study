@@ -9,10 +9,11 @@ import EditableElement from './components/EditableElement';
 import { tasksList, channels } from './kanbanLists';
 import styles from "./App.module.css";
 
+
 function App() {
 
-  const [tasks, setTasksStatus] = useState(tasksList); 
-  const [isClicked, setIsClicked] = useState(false);
+  // State
+  const [tasks, setTasksStatus] = useState(tasksList);
 
   const changeTaskStatus = useCallback(
     (id, status) => {
@@ -44,6 +45,8 @@ function App() {
                   status={label}
                   changeTaskStatus={changeTaskStatus}
                   style={style}
+                  setTasksStatus={setTasksStatus}
+                  tasks={tasks}
                 >
                   {tasks.filter((item) => item.status === label).map((item) =>
                     <KanbanItem
