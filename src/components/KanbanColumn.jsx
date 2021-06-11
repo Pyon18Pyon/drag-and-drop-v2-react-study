@@ -32,9 +32,8 @@ function KanbanColumn({ children, changeTaskStatus, style, status, setTasksStatu
   };
 
   const addNewItem = () => {
-    console.log('newText:', newText);
-    const addNewText = tasks.concat({ title: newText, status: status, _id: nanoid() });
-    setTasksStatus(addNewText);
+    const addNewText = { title: newText, status: status, _id: nanoid() };
+    setTasksStatus((prevState) => [...prevState, addNewText]);
     setShowForm(false);
     setNewText('');
   };
@@ -63,9 +62,9 @@ function KanbanColumn({ children, changeTaskStatus, style, status, setTasksStatu
             <span>Save Item</span>
           </div>
 
-          <div className={styles.addContainer}>
+          <div className={styles.addContainer} >
             <EditableElement onChange={handleChange}>
-              <div className={styles.addItem}></div>
+              <div className={styles.addItem}></div> 
             </EditableElement>
           </div>
         </div>
