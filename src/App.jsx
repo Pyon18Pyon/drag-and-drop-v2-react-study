@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import update from "immutability-helper";
@@ -66,6 +66,17 @@ function App() {
     });
   };
   
+  useEffect(() => {
+    if (localStorage.getItem('kanbanBoard')) {
+      setTasksStatus(JSON.parse(localStorage.kanbanBoard));
+    } else {
+      localStorage.setItem('kanbanBoard', JSON.stringify(tasks));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('kanbanBoard', JSON.stringify(tasks));
+  }, [tasks]);
   
 
   return (
