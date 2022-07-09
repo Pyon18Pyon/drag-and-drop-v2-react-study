@@ -2,7 +2,7 @@
 
 This project was created in React after the completion of the Udemy course, [JavaScript Web Project: 20 Projects to Build Your Portfolio](https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/).
 
-During this course, the project was made with vanilla JavaScript so I re-wrote the entire app in React.
+During this course, the project was made with vanilla JavaScript so I rewrote the entire app in React.
 The vanilla JavaScript version: [drag-and-drop-v1-javascript-study](https://github.com/Pyon18Pyon/drag-and-drop-v1-javascript-study).
 
 ## What it does?
